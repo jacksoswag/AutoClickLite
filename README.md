@@ -52,9 +52,6 @@ python autoclicker.py
 The toggle is bound to the `x` and `,` keys. Pressing either one flips clicking
 on or off.
 
-> Note: the on-screen prompt currently reads `Press ',' or '.'`, but the
-> handler actually listens for `x` and `,`. Use `x` or `,`.
-
 The hotkey is captured globally, so it fires even when the terminal is not the
 focused window. Keep that in mind, since the toggle keys also type normally into
 other applications.
