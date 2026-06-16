@@ -40,7 +40,7 @@ def on_press(key):
 thread = threading.Thread(target=click_loop, daemon=True)
 thread.start()
 
-print("Press ',' or '.' to start/stop clicking (runs continuously).")
+print("Press 'x' or ',' to start/stop clicking (runs continuously).")
 
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
