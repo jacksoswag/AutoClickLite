@@ -1,3 +1,5 @@
+"""Minimal command-line autoclicker: toggles rapid left-clicks with a global hotkey."""
+
 import threading
 import time
 from pynput import mouse, keyboard
