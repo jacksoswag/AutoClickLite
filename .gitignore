@@ -1,0 +1,61 @@
+# --- Secrets / credentials (never commit) ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+id_rsa*
+*credentials*
+*secret*
+README.orig.md
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# --- Build output ---
+.build/
+build/
+dist/
+target/
+DerivedData/
+.next/
+
+# --- Unity (if applicable) ---
+Library/
+Temp/
+Obj/
+Logs/
+UserSettings/
+
+# --- Large model / binary artifacts ---
+*.mlmodelc
+*.mlpackage
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.onnx
+*.gguf
+
+# --- OS junk ---
+.DS_Store
