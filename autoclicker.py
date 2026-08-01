@@ -5,7 +5,24 @@ import time
 from pynput import mouse, keyboard
 
 # --- SETTINGS ---
-n = float(input("Enter clicks per second (n): "))
+def read_clicks_per_second():
+    while True:
+        try:
+            value = float(input("Enter clicks per second (n): "))
+        except ValueError:
+            print("Please enter a number.")
+            continue
+        if value <= 0:
+            print("Please enter a number greater than 0.")
+            continue
+        return value
+
+try:
+    n = read_clicks_per_second()
+except (EOFError, KeyboardInterrupt):
+    print()
+    raise SystemExit(0)
+
 interval = 1 / n
 clicking = False
 
@@ -43,6 +60,10 @@ thread = threading.Thread(target=click_loop, daemon=True)
 thread.start()
 
 print("Press 'x' or ',' to start/stop clicking (runs continuously).")
+print("Press Ctrl-C to quit.")
 
-with keyboard.Listener(on_press=on_press) as listener:
-    listener.join()
+try:
+    with keyboard.Listener(on_press=on_press) as listener:
+        listener.join()
+except KeyboardInterrupt:
+    print("\nStopped.")
